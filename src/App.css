@@ -21,7 +21,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  width: 100%;
 }
 
 header h1 {
@@ -163,3 +163,17 @@ form button:hover {
 .dark-mode h1 {
   color: #ffcc00; /* Changer la couleur des titres h2 en mode sombre */
 }
+button {
+  min-width: 100px; /* Largeur fixe pour éviter les sauts */
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px; /* Espacement entre les boutons */
+  justify-content: flex-end; /* Aligner à droite */
+  flex-shrink: 0; /* Empêcher la réduction du conteneur */
+}
+
