@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = ({ isDarkMode }) => {
   return (
-    <footer>
-      <p>&copy; 2025 John Doe. Tous droits réservés.</p>
+    <footer className={isDarkMode ? 'dark-mode' : 'light-mode'}>
+      <p>&copy; 2023 John Doe. Tous droits réservés.</p>
     </footer>
   );
 };

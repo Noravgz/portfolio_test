@@ -1,8 +1,8 @@
 import React from 'react';
 
-const MainContent = () => {
+const MainContent = ({ isDarkMode }) => {
   return (
-    <main>
+    <main className={isDarkMode ? 'dark-mode' : 'light-mode'}>
       <section>
         <h2>Bonjour, je m'appelle John Doe. Bienvenue sur mon portfolio !</h2>
         <p>
@@ -25,6 +25,7 @@ const MainContent = () => {
         </div>
         <div>
           <h4>Projet 3</h4>
+          <img src="https://via.placeholder.com/150" alt="Projet 3" />
           <p>Description du projet 3.</p>
         </div>
       </section>

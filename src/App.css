@@ -1,3 +1,14 @@
+/* Styles globaux */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
 .App {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -5,16 +16,7 @@
   margin-left: 90px;
 }
 
-.light-mode {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
-}
-
+/* Styles pour le header */
 header {
   display: flex;
   justify-content: space-between;
@@ -31,6 +33,7 @@ header button {
   cursor: pointer;
 }
 
+/* Styles pour le main */
 main section {
   margin-bottom: 40px;
 }
@@ -41,12 +44,13 @@ main img {
   margin-right: 10px;
 }
 
+/* Styles pour le footer */
 footer {
   text-align: center;
   margin-top: 40px;
 }
 
-/* Style général de la section Contact */
+/* Styles pour les sections */
 section {
   margin: 40px 0;
   padding: 20px;
@@ -68,7 +72,7 @@ section p {
   margin-bottom: 20px;
 }
 
-/* Style du formulaire */
+/* Styles pour le formulaire */
 form {
   display: flex;
   flex-direction: column;
@@ -110,7 +114,7 @@ form button:hover {
   background-color: #0056b3;
 }
 
-/* Mode sombre */
+/* Styles pour le mode sombre */
 .dark-mode section {
   background-color: #333;
   color: #fff;
@@ -131,6 +135,14 @@ form button:hover {
   color: #fff;
 }
 
+/* Styles pour les champs de formulaire en mode clair */
+.light-mode form input,
+.light-mode form textarea {
+  background-color: #fff;
+  border-color: #ccc;
+  color: #000;
+}
+
 .dark-mode form input:focus,
 .dark-mode form textarea:focus {
   border-color: #007bff;
@@ -142,4 +154,12 @@ form button:hover {
 
 .dark-mode form button:hover {
   background-color: #0056b3;
+}
+
+.dark-mode img {
+  filter: brightness(0.8); /* Assombrir légèrement les images en mode sombre */
+}
+
+.dark-mode h1 {
+  color: #ffcc00; /* Changer la couleur des titres h2 en mode sombre */
 }
