@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import MainContent from "./components/MainContent";
 import Footer from "./components/Footer";
+import HomePage from "./pages/HomePage";
+import ContactPage from "./pages/ContactPage";
+import ProjectsPage from "./pages/ProjectsPage"; // Importez ProjectsPage
 import translations from "./translations";
 import "./App.css";
 
@@ -32,16 +35,24 @@ const App = () => {
   }, [isDarkMode]);
 
   return (
-    <div className={`App ${isDarkMode ? "dark-mode" : "light-mode"}`}>
-      <Header 
-        isDarkMode={isDarkMode} 
-        toggleTheme={toggleTheme} 
-        language={language} 
-        toggleLanguage={toggleLanguage} 
-      />
-      <MainContent isDarkMode={isDarkMode} language={language} />
-      <Footer isDarkMode={isDarkMode} language={language} />
-    </div>
+    <Router>
+      <div className={`App ${isDarkMode ? "dark-mode" : "light-mode"}`}>
+        <Header
+          isDarkMode={isDarkMode}
+          toggleTheme={toggleTheme}
+          language={language}
+          toggleLanguage={toggleLanguage}
+        />
+
+        <Routes>
+          <Route path="/" element={<HomePage language={language} />} />
+          <Route path="/contact" element={<ContactPage language={language} />} />
+          <Route path="/projects" element={<ProjectsPage language={language} />} /> {/* Ajout de la route pour ProjectsPage */}
+        </Routes>
+
+        <Footer isDarkMode={isDarkMode} language={language} />
+      </div>
+    </Router>
   );
 };
 
